@@ -1,5 +1,7 @@
 {
+  "name": "LeVictoria",
+  "displayName": "LeVictoria",
   "expo": {
-    "sdkVersion": "23.0.0"
+    "sdkVersion": "27.0.0"
   }
 }

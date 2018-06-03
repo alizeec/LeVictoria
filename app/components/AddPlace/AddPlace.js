@@ -3,11 +3,18 @@ import { ScrollView, StyleSheet, Button, Alert } from 'react-native';
 const Title = require('../Title');
 import t from 'tcomb-form-native'; // 0.6.9
 const styles = require('../../../styles.js');
-import Place from '../../models/Place'
 import firebase from "../../config/firebase"
 const ListScreen = require('../List/List')
 
 const Form = t.form.Form;
+const Place = t.struct({
+  name:t.String,
+  price_range: t.maybe(t.Number),
+  description: t.maybe(t.String),
+  subway: t.maybe(t.String),
+  style: t.maybe(t.String),
+  address: t.maybe(t.String)
+});
 
 const options = {
     fields: {

@@ -1,15 +1,20 @@
-'use strict';
+import React from 'react';
+import {AppRegistry, View} from 'react-native';
+import {Provider} from 'react-redux'
+import {store} from './app/redux/app-redux';
+import AppNavigator from './app/navigation/navigator';
 
-import React, {Component} from 'react';
-import { AppRegistry, StyleSheet, Text, View, Button, ListView, TouchableHighlight} from 'react-native';
-import { StackNavigator } from 'react-navigation';
-const styles = require('./styles.js');
-import LeVictoriaApp from "./app/navigation/navigator"
-
-export default class App extends React.Component {
-  render() {
-    return <LeVictoriaApp />;
-  }
+export default class LeVictoria extends React.Component {
+    render() {
+        return (
+            <Provider store={store}>
+                <AppNavigator/>
+            </Provider>
+        );
+    }
 }
-console.ignoredYellowBox = ['Setting a timer'];
-AppRegistry.registerComponent('Vicoune', () => LeVictoriaApp);
+AppRegistry.registerComponent('Vicoune', () => LeVictoria);
+console.ignoredYellowBox = ['Setting a timer', '`setTranslucent` is only available on Android',
+    'Warning: isMounted(...) is deprecated', 'Module RCTImageLoader',
+    'Remote debugger is in a background tab which may cause apps to perform slowly'];
+

@@ -1,16 +1,16 @@
-const ListScreen = require('../components/List/List');
-const AddPlaceScreen = require('../components/AddPlace/AddPlace')
-const HomeScreen = require('../components/Home/Home')
-const SeePlaceScreen = require('../components/SeePlace/SeePlace')
-import { StackNavigator } from 'react-navigation';
+import React from 'react';
 
-const LeVictoriaApp = StackNavigator({
-    Home: { screen: HomeScreen },
-    List: { screen: ListScreen },
-    AddPlace: {screen: AddPlaceScreen},
-    SeePlace: {screen: SeePlaceScreen}
-  },{ 
-    headerMode: 'screen' 
-  });
+import { createStackNavigator } from 'react-navigation';
+import HomeScreen from '../components/Home/Home';
+import ListScreen from '../components/List/List';
 
-export default LeVictoriaApp
+export default AppNavigator = createStackNavigator({
+    Home: HomeScreen,
+    List: ListScreen
+    //Home: { screen: HomeScreen },
+    /* AddPlace: {screen: AddPlaceScreen},
+     SeePlace: {screen: SeePlaceScreen}*/
+}, {
+    headerMode: 'screen',
+    initialRouteName: 'Home'
+});
